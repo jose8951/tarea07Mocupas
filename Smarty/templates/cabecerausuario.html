@@ -1,0 +1,51 @@
+<div id="navCabeceraUsuario">
+    <!-- Generamos la tabla que contiene los enlaces de la cabecera-->
+    <table id="menuCabecera">
+        <tr>
+            <td>
+                <!-- Se genera el botón "Crear anuncio" y se envia el usuario y contraseña del administrador.-->
+                <form action="crearanuncio.php" method="post">
+                    <input type="submit" id="botonCrearAnuncionUsuario" name="anuncio" value="Crear anuncio"
+                        class="botonCabecera">
+                    <!-- Se cierra el formulario-->
+                </form>
+            </td>
+            <td>
+                <!-- Se genera el botón "Listado de anuncios" y se envia el usuario y contraseña del administrador.-->
+                <form action="escaparate.php" method="post">
+                    <input type="submit" id="botonListadoDeAnuncios" name="listadoDeAnuncios"
+                        value="Listado de anuncios" class="botonCabecera">
+                </form>
+            </td>
+            <td>
+                <!-- Se genera el botón "Preferencias" y se envia el usuario y contraseña del administrador.-->
+                <form action="preferencias.php" method="post">
+                    <input type="submit" id="botonPreferencias" name="preferencias" value="preferencias"
+                        class="botonCabecera">
+                    <!-- Se cierra el formulario-->
+                </form>
+            </td>
+            {if {$login} == "dwes"}
+            <td>
+                <form action="desbloquear.php" method="post">
+                    <input type="submit" id="botonDesbloquear" name="desbloquear" value="Desbloquear usuario"
+                        class="botonCabecera">
+                </form>
+            </td>
+            {/if}
+            <td>
+                <!-- Se genera el botón "Salir"-->
+                <form action="cerrar.php" method="post">
+                    <input type="submit" name="Salir" value="Salir" class="botonCabecera">
+                    <!-- Se cierra el formulario-->
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>
+{if {$login=="invitado"}}
+<!-- Generamos la capa "datosSesion"-->
+<div id="datosSesion">
+    <span class="login" name='login'>{$login} {$hora}</span>
+</div>
+{/if}

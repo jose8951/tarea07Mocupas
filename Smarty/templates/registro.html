@@ -1,0 +1,31 @@
+
+<!--Se genera el formulario-->
+<form id="formularioRegistro" action="registro.php" method="post">
+
+
+    <!--Se genera la etiqueta "Login" y precargamos el dato desde php. -->
+    <label class="login">Usuario:<input id='inputLoginRegistro' name='login' class="inputLogin" type='text' placeholder='Tu usuario' required pattern='[a-zA-Z0-9_-]+' autofocus='true' title='Debe introducir letras y números. ' value='{if isset({$precargoLogin})}{$precargoLogin}{/if}'></label>
+    {if $errorLogin !=""}<label class='error'>{$errorLogin}<br/></label>{/if}
+    </br>
+    <!--Se genera la etiqueta "Password" y precargamos el dato desde php. -->
+    <label class="textForm">Password:<input id='inputPassword1Registro' name='password' type='password' placeholder='Tu contraseña' required pattern="[a-zA-Z0-9.-_]{literal}{1,128}{/literal}"  title='Debe introducir letras y números. ' value='{if isset({$precargoPassword})}{$precargoPassword}{/if}'></label>
+    {if $errorPassword !=""}<label class='error'>{$errorPassword}<br/></label>{/if}
+    </br>
+    <!--Se genera la etiqueta "Password" y precargamos el dato desde php. -->
+    <label class="textForm">Password<input id="inputPassword2Registro" name='password2' type='password' placeholder="Repetir contraseña" required pattern='[a-zA-Z0-9.-_]{literal}{1,128}{/literal}'  title='Debe introducir letras y números. ' value='{if isset({$precargoPassword2})}{$precargoPassword2}{/if}'></label>
+    {if $errorPassword !=""}<label class='error'>{$errorPassword2}<br/></label>{/if} </br>
+    <!--Generamos la etiqueta "Email" y precargamos el email desde php. -->
+
+
+    <label class="textForm">Email:<input name='email' id="inputEmailRegistro" type='email' placeholder="example@exmaple.es" required
+	pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{literal}{|}{/literal}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" 
+	title='Debe introducir un email válido.' value='{if isset({$precargoEmail})}{$precargoEmail}{/if}'></label>
+    {if $errorEmail !=""}<label class='error'>{$errorEmail}<br/></label>{/if} </br> </br>
+    {if $errorGeneral !=""}<label id="errorGeneralRegistro" class='error'>{$errorGeneral}<br/></label>{/if} </br>
+
+    <!-- Se genera el botón "Registrarse"-->
+
+    <input type="submit" class="botonFormulario" id="registrarse" name="registrarse" value="Registrarse" ><br/>
+
+   
+    </form>

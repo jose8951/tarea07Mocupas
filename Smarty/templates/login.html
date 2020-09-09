@@ -1,0 +1,30 @@
+<!--Se genera la capa-->
+<div id="formularioLogin" class="oculto">
+    <form action="usuario.php" id="formularioLoginUsuario" method="post">
+        <!--Generamos la etiqueta "Usuario" y precargamos el dato desde php. -->
+        <label class="login">Usuario:<br /><input id="inputLogin" name='login' class="inputLogin" type='text'
+                placeholder='Tu usuario' required pattern='[a-zA-Z0-9_-]+' autofocus='true'
+                title='Debe introducir letras y números. '
+                value='{if isset({$precargoLogin})}{$precargoLogin}{/if}'></label>
+        <span class='error'>{$errorLogin}</span><br></span>
+        <!--Generamos la etiqueta "Clave" y precargamos el dato desde php. -->
+        <br>
+        <br /><label class="login">Clave:<br /><input name='clave' id="inputClave" class="inputLogin" type='password'
+                placeholder="Tu clave" required pattern="[a-zA-Z0-9-_.]+" title='Debe introducir un clave válida.'
+                value='{if isset({$precargoClave})}{$precargoClave}{/if}'></label>
+        <span class="error">{$errorClave}<br></span>
+
+        <br><br>
+        <span id="errorGeneralLogin" class="error">{$errorGeneral}<br></span>
+        <br>
+        <!--Se genera el botón "Gestionar mi cuenta".-->
+        <input type="submit" id="gestionarmicuenta" class="botonFormularioLogin" name="gestionarmicuenta"
+            value="Gestionar mi cuenta" width="200px">
+
+    </form>
+
+      <!-- Formulario del botón "Registrarse"-->
+      <form action="registro.php" id="formularioRegistrase" method="post">
+          <input type="submit" id="registrarse" class="botonFormularioLogin" name="registrarse" value="Registrarse">
+      </form>
+</div>

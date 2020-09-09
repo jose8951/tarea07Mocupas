@@ -1,0 +1,25 @@
+{if($resultado=='1')}
+
+<!-- Se genera la capa "capaformulario'-->
+<div id="sinDesbloquear">
+    <h1>No hay ningún usuario para desbloquear.</h1><br />
+</div>
+{else}
+<!-- Se genera el formulairo  "FormularioDesbloquear"-->
+<form action="desbloquear.php" id="FormularioDesbloquear" method="POST">
+    <table>
+        {foreach from=$resultado item=$valor}
+        <tr>
+            <td><label for="'_{$valor[0]}'" id='texto_{$valor[0]}'>
+            <input type="checkbox" id="_{$valor[0]}">{$valor[0]}
+        </label></td>
+        </tr>
+        {/foreach}
+        <tr>
+            <td colspan="6"><input type="submit" id="desbloquear" class="botonFormulario" name="desbloquear" value="Desbloquear">
+            </td>
+        </tr>
+    </table>
+
+</form>
+{/if}

@@ -1,0 +1,102 @@
+<!-- Si no hay anuncios-->
+{if {$resultado} ==1}
+<div id="sinAnuncios">
+    <h1>No hay ningún anuncio.</h1><br />
+</div>
+{else}
+
+<!-- Anuncios de la última semana-->
+{foreach from=$resultado item=$valor}
+{if {$valor[1]} <=7 && {$valor[2]}==0 && {$valor[3]}==0} <div class='anuncio semanaAnterior'>
+    <div id='{$valor[0]->getId_anuncio()}' class='filaAnuncio'><span id="textoAnuncioAutor{$valor[0]->getId_anuncio()}"
+            class='textForm'>Autor:&nbsp;&nbsp;{$valor[0]->getAutor()}</span>
+        <span id="textoAnuncioFecha{$valor[0]->getId_anuncio()}"
+            class='textForm'>Fecha:&nbsp;{$valor[0]->getFecha()}</span><span
+            id="textoAnuncioMoroso{$valor[0]->getId_anuncio()}"
+            class='textForm'>Moroso:&nbsp;{$valor[0]->getMoroso()}</span><br />
+        <span id="textoAnuncioDescripción{$valor[0]->getId_anuncio()}"
+            class='textForm'>Descripción:&nbsp;{$valor[0]->getDescripcion()}</span><br /><br />
+        <form action="index.php" method="POST">
+            <input id='mapa{$valor[0]->getId_anuncio()}' class="botonMapa" type="submit" value="Mapa">
+        </form>
+
+        {if {$login}=={$valor[0]->getAutor()}}
+        <form action="index.php" method="POST">
+            <input id="botonModificar{$valor[0]->getId_anuncio()}" class="botonModificar" type="submit"
+                value="Modificar">
+        </form>
+        <form action="index.php" method="POST">
+            <input id="botonEliminar{$valor[0]->getId_anuncio()}" class="botonEliminar" type="submit" value="Eliminar">
+        </form>
+        {/if}
+    </div>
+    <div class="mapa">
+        <div id='mapid{$valor[0]->getId_anuncio()}' class='mapa oculto'>{$valor[0]->getLocalidad()}
+
+        </div>
+        <div class="nuevoOrigen">
+            <form id='formNuevoOrigen{$valor[0]->getId_anuncio()}' class="oculto">
+                <label for="nuevoOrigen{$valor[0]->getId_anuncio()}" class="textForm">Nuevo origen:</label><input
+                    id='nuevoOrigen{$valor[0]->getId_anuncio()}' name="localidad" type="textarea"
+                    placeholder="calle número, localidad ,provincia, país"
+                    pattern="[a-zA-Z0-9ñÑÁÉÍÓÚáéíóú ,]{literal}{1,60}{/literal}" size="58"
+                    title='Debe introducir letras y números. ' />
+                <input id='botonNuevoOrigen{$valor[0]->getId_anuncio()}' class="botonNuevoOrigen textForm" type="submit"
+                    value="Cambiar" />
+            </form>
+        </div>
+    </div>
+    </div>
+
+    {else}
+    <!-- Anuncios de más de una semana-->
+    <div class='anuncio otrosAnuncios'>
+        <div id='{$valor[0]->getId_anuncio()}' class='filaAnuncio'><span
+                id="textoAnuncioAutor{$valor[0]->getId_anuncio()}"
+                class='textForm'>Autor:&nbsp;&nbsp;{$valor[0]->getAutor()}</span>
+            <span id="textoAnuncioFecha{$valor[0]->getId_anuncio()}"
+                class='textForm'>Fecha:&nbsp;{$valor[0]->getFecha()}</span><span
+                id="textoAnuncioMoroso{$valor[0]->getId_anuncio()}"
+                class='textForm'>Moroso:&nbsp;{$valor[0]->getMoroso()}</span><br />
+            <span id="textoAnuncioDescripción{$valor[0]->getId_anuncio()}"
+                class='textForm'>Descripción:&nbsp;{$valor[0]->getDescripcion()}</span><br /><br />
+            <form action="index.php" method="POST">
+                <input id='mapa{$valor[0]->getId_anuncio()}' class="botonMapa" type="submit" value="Mapa">
+            </form>
+
+            {if {$login}=={$valor[0]->getAutor()}}
+            <form action="index.php" method="POST">
+                <input id="botonModificar{$valor[0]->getId_anuncio()}" class="botonModificar" type="submit"
+                    value="MOdificar">
+            </form>
+            <form action="index.php" method="POST">
+                <input id="botonEliminar{$valor[0]->getId_anuncio()}" class="botonEliminar" type="submit"
+                    value="ELiminar">
+            </form>
+            {/if}
+        </div>
+        <div class="mapa">
+            <div id='mapid{$valor[0]->getId_anuncio()}' class='mapa oculto'>{$valor[0]->getLocalidad()}
+
+            </div>
+            <div class="nuevoOrigen">
+                <form id='formNuevoOrigen{$valor[0]->getId_anuncio()}' class="oculto">
+                    <label for="nuevoOrigen{$valor[0]->getId_anuncio()}" class="textForm">Nuevo origen:</label><input
+                        id='nuevoOrigen{$valor[0]->getId_anuncio()}' name="localidad" type="textarea"
+                        placeholder="calle número, localidad ,provincia, país"
+                        pattern="[a-zA-Z0-9ñÑÁÉÍÓÚáéíóú ,]{literal}{1,60}{/literal}" size="58"
+                        title='Debe introducir letras y números. ' />
+                    <input id='botonNuevoOrigen{$valor[0]->getId_anuncio()}' class="botonNuevoOrigen " type="submit"
+                        value="cambiar" />
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+    {/if}
+
+    {/foreach}
+
+    {/if}

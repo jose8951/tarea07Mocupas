@@ -1,0 +1,33 @@
+<!--Se genera el formulario-->
+<form id="formularioAnuncio" action="crearanuncio.php" method="post">
+
+
+        <!--Se genera la etiqueta "Autor" y precargamos el dato desde php. -->
+        <label class="textForm">Autor: {$login} </label>
+    
+        </br>
+    
+        <!--Generamos la etiqueta "Fecha" y precargamos la fecha desde php. -->
+        <label class="textForm">Fecha:<input id="inputFechaAnuncio"name='fecha' type='date' placeholde="1984-07-27"  autofocus='true' required title='Debe introducir una fecha.' value='{if isset({$precargoFecha})}{$precargoFecha}{/if}'>
+        </label><br />
+    
+        {if {$errorFecha} !=""}<label class='error'>{$errorFecha}<br/></label>{/if}
+    
+        <!--Se genera la etiqueta "Moroso" y precargamos el dato desde php. -->
+        <label class="textForm">Moroso:<input id="inputAnuncioMoroso" name='moroso' type='text' placeholder="Nombre del moroso" required pattern='[a-zA-ZÁÉÍÓÚáéíóú0-9 ]{literal}{1,60}{/literal}'  title='Debe introducir un moroso. ' value='{if isset({$precargoMoroso})}{$precargoMoroso}{/if}'></label>
+        {if {$errorMoroso} !=""}<label class="error">{$errorMoroso}<br/></label>{/if} </br>
+        <!--Se genera la etiqueta "Localidad" y precargamos el dato desde php. -->
+        <label class="textForm">Localidad:<input id="inputAnuncioLocalidad" name="localidad" type="textarea"  required name="localidad" size="50" type="text" placeholder="calle número, localidad, provincia, país"  title="Debe introducir calle número, localidad, provincia, país" pattern="[a-zA-Z0-9ñÑÁÉÍÓÚáéíóú ,]{literal}{1,60}{/literal}"  value='{if isset({$precargoLocalidad})}{$precargoLocalidad}{/if}'></label>
+        {if {$errorLocalidad} !=""}<label class="error">{$errorLocalidad}<br/></label>{/if} </br> </br>
+        <!--Se genera la etiqueta "Descripción" y precargamos el dato desde php. -->
+        <label class="textForm"> Descripción:<textarea id="inputAnuncioDescripcion" name="inputAnuncioDescripcion" cols="50" rows="4" minlength="1" maxlength="500" width="50%;" required pattern='[a-zA-ZáéíóúÁÉÍÓÚ0-9€ ,.\"_-]{literal}{1,500}{/literal}'  placeholder="Descripción del anuncio." title="Debe introducir una descripcion." required>{if isset({$precargoDescripcion})}{$precargoDescripcion}{/if}</textarea></label>
+        {if {$errorDescripcion} !=""}<label class="error">{$errorLocalidad}<br/></label>{/if} </br> </br> </br>
+    
+        <!-- Se genera el botón "Guardar"o "Modificar"-->
+        {if {$boton}=="guardar"}
+        <input type="submit" class="botonFormulario" id="botonGuardarAnuncio" name="guardar" value="Guardar" ><br/>
+        {else}
+        <input type="submit" class="botonFormulario" id="botonModificarAnuncio" name="botonModificarAnuncio" value="Modificar" ><br/>
+        {/if}
+    
+    </form>

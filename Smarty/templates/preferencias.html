@@ -1,0 +1,16 @@
+<!--Se genera el formulario-->
+<form action="preferencias.php" id="formularioPreferencias" method="post">
+    <!--Generamos la etiqueta "Color de fondo" y precargamo el color de fondo. -->
+    <label class="textForm">Color de fondo:<input autofocus id="colorFondo" name="color" type="color"
+            value="{if isset({$fondo})} {$fondo}{/if}"></label><br>
+
+    <input type="submit" class="botonFormulario" id="botonGuardarPreferencias" name="guardar" value="Guardar"><br>
+
+</form>
+
+<form action="preferencias.php" id="formularioPreferenciasRestablecer" method="post">
+    <!-- Se genera el botón "Restablecer Fondo"-->
+    <input type="submit" class="botonFormulario" id="botonRestablecerPreferencias" name="restablecer"
+        value="Restablecer fondo"><br>
+
+</form>

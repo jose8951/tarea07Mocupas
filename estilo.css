@@ -1,0 +1,272 @@
+/* Estilo para la las etiquetas generales de html*/
+html,
+body {
+    background-color: #ffffff;
+    font-family: Arial;
+    width: 98vw;
+    /*height: 93vh;*/
+    font-size: 1rem;
+    color: black;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+}
+
+/* Estilo de la etiqueta h1.*/
+h1 {
+    font-family: Arial;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+span {
+    margin-left: 1rem;
+}
+
+input {
+    font-family: Arial;
+}
+
+/*Etiqeutas por identificador*/
+/* Estilo de la tabla del menú de cabecera.*/
+#menuCabecera {
+    position: relative;
+    height: 5%;
+    width: 90%;
+    left: 5%;
+    list-style-type: none;
+    font-family: Arial;
+    font-size: 1em;
+    background-color: red;
+}
+
+/* Estilo para la capa de cabecera.*/
+#navCabecera {
+    margin-bottom: 1vh;
+}
+
+/* Estilo para la capa de pie de página.*/
+#piedepagina {
+    position: relative;
+    color: black;
+    text-align: center;
+    width: 98vw;
+    height: 5vw;
+    bottom: 0vh;
+    background-color: red;
+}
+
+/* Estilo para el capaFormulario.*/
+
+#capaformulario {
+    position: relative;
+    width: 60%;
+    left: 40%;
+    font-family: Arial;
+    font-size: 1em;
+}
+
+/* Estilo para el capaAnuncios.*/
+#capaAnuncios {
+    width: 95vw;
+    font-family: Arial;
+    font-size: 1rem;
+    overflow: auto;
+    max-height: 51vh;
+    margin: 2vw;
+}
+
+/* Estilo para el formulario "formularioRegistro"*/
+#formularioRegistro {
+    position: relative;
+    width: 65vw;
+    left: 34vw;
+    font-family: Arial;
+    font-size: 1rem;
+}
+
+/* Estilo para el formulario "formularioAnuncio"*/
+#formularioAnuncio {
+    position: relative;
+    width: 59vw;
+    left: 30vw;
+    font-family: Arial;
+    font-size: 1rem;
+}
+
+#formularioAnuncio label {
+    margin-top: 1vh;
+    background-color: red;
+  
+}
+
+#invitado {
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo para el formulario "formularioRestablecer"*/
+#formularioPreferenciasRestablecer {
+    position: relative;
+    width: 52%;
+    left: 40%;
+    font-family: Arial;
+    font-size: 1em;
+    margin-top: 4%;
+}
+
+/* Estilo para el formulario "formularioPreferencias"*/
+#formularioPreferencias {
+    position: relative;
+    width: 28%;
+    left: 40%;
+    font-family: Arial;
+    font-size: 1em;
+}
+
+/* Estilo para la tabla desbloquear*/
+#tablaDesbloquear {
+    position: relative;
+    width: 28%;
+    left: 40%;
+    font-family: Arial;
+    font-size: 1em;
+}
+
+#formularioLogin {
+    width: 64vw;
+    margin-left: 35vw;
+}
+
+#formularioRegistro input {
+    margin-left: 1vw;
+}
+
+#formularioAnuncio input[type=text] {
+    margin: 1vh;
+}
+
+#FormularioDesbloquear {
+    margin-left: 35vw;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#sinAnuncios,
+#sinDesbloquear {
+    display: flex;
+    justify-content: center;
+}
+
+/*Etiquetas por clase*/
+/* Estilo para la clase filaAnuncio .*/
+.filaAnuncio {
+    width: 169vw;
+    display: flex;
+    flex-flow: row wrap;
+    
+}
+
+/* Estilo para la clase otrosAnuncios.*/
+.otrosAnuncios {
+    background-color: bisque;
+}
+
+/* Estilo para la clase semanaAnterior.*/
+.semanaAnterior {
+    background-color: darkseagreen;
+}
+
+/* Estilo para la clase anuncio.*/
+.anuncio {
+    margin: 1vh;
+    max-width: 98vw;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 1vh;
+}
+
+/* Estilo para la clase "login"*/
+.login {
+    font-family: Arial;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Estilo para las clases "botonFormulario","botonFormularioLogin"*/
+.botonFormulario,
+.botonFormularioLogin {
+    font-family: Arial;
+    font-size: 1rem;
+    width: 31vw;
+    margin-top: 1vh;
+    font-weight: bold;
+}
+
+/* Estilo para el botón  "restablecer"*/
+.botonFormulario #restablecer {
+    font-family: Arial;
+    font-size: 1em;
+    width: 31%;
+}
+
+/* Estilo para las clase "botonCabecera"*/
+.botonCabecera {
+    font-family: Arial;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Estilo para las clase "inputLogin"*/
+.inputLogin {
+    font-family: Arial;
+    font-size: 1em;
+    width: 30%;
+}
+
+/* Estilo para las clase "textForm"*/
+
+
+.textForm {
+    font-family: Arial;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 0.5vw;
+   
+}
+
+/* Estilo para los mensajes de error.*/
+.rojo,
+.error {
+    color: red;
+    font-size: 0.8rem;
+}
+
+/* Estilo para las etiquetas input.*/
+
+.oculto {
+    display: none;
+}
+
+.anuncioCompleto{
+    display: flex;
+    flex-flow: column;
+}
+
+.botonModificar,
+.botonEliminar,
+.botonNuevoOrigen,
+.botonMapa,
+.botonPreferencias{
+    font-family: Arial;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 1vh
+}
+
+.inicio{
+    margin-left: 1vw;
+}
+.nuevoOrigen{
+    margin-top: 1vh;
+}
